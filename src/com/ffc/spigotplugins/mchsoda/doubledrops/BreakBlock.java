@@ -12,6 +12,20 @@ public class BreakBlock implements Listener {
     public void onPlayerBreakBlock(BlockBreakEvent event){
         Block blockBroken = event.getBlock();
 
+        if (blockBroken.getType() == Material.GOLD_ORE);
+        event.setCancelled(true);
+        blockBroken.setType(Material.AIR);
+        ItemStack goldore = new ItemStack(Material.GOLD_ORE, 2);
+        blockBroken.getWorld().dropItemNaturally(blockBroken.getLocation(), goldore);
+
+
+        if (blockBroken.getType() == Material.IRON_ORE);
+        event.setCancelled(true);
+        blockBroken.setType(Material.AIR);
+        ItemStack ironore = new ItemStack(Material.IRON_ORE, 2);
+        blockBroken.getWorld().dropItemNaturally(blockBroken.getLocation(), ironore);
+
+
         if (blockBroken.getType() == Material.ANCIENT_DEBRIS);
         event.setCancelled(true);
         blockBroken.setType(Material.AIR);
